@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Show the first video
     videos[currentIndex].classList.add("active");
-    texts[currentIndex].classList.add("active-text");
+    texts[1].classList.add("active-text");
 
      // Function to switch video and text
      const switchVideo = (index) => {

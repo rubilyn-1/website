@@ -168,8 +168,13 @@ body {
     object-fit: cover;
     opacity: 0;
     transition: opacity 1.5s ease; /* Dissolve effect */
+    filter: grayscale(50%) blur(3px) brightness(0.9);
+    filter: contrast(50%); /* Increase contrast */
+
+
     z-index: 1;
 }
+
 
 .slider-video.active {
     opacity: 1;
@@ -177,21 +182,23 @@ body {
 /* Text Styling */
 .slider-text {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 70%;
+    left: 30%;
     transform: translate(-50%, -50%) scale(0.8); /* Pop-up effect on initial load */
-    color: rgb(66, 14, 14);
-    font-size: 48px;
+    color: rgb(255, 174, 0);
+    font-size: 70px;
     text-align: center;
     opacity: 0;
     transition: opacity 1.5s ease, transform 0.5s ease; 
     justify-content: center;
-    display: flex;
+    display: block;
+    z-index: 55;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 5px;
 }
 
 .slider-text.active-text {
     opacity: 1;
-    transform: scale(1.1); /* Pop-up effect when active */
 }
 .controls {
     position: absolute;
