@@ -12,7 +12,7 @@ body {
 .header-container {
     width: 100%; 
     background: rgba(128, 128, 128, 0.5); /* Translucent gray */
-    padding: 20px; 
+    padding: 10px; 
     display: flex;
     justify-content: center; 
     align-items: center; 
