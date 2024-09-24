@@ -3,66 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quezon Institute of Technology</title>
-    <link rel="icon" type="image/jpg" href="images/logo.png">
-    <link rel="stylesheet" href="style2.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>QIT</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <header>
-    <div class="logo-container">
-        <img src = "images/logo.png" alt="logo" class="logo">
-        <h1 class="uni-name">
-            <span>Quezon Institute</span><br>
-            <span>of Technology</span>
-        </h1>
-    </div>   
-</header>
-<div class="menu-box">
-    <nav class="menu">
-        <ul>
-            <li><a href="#">Programs Offered</a></li>
-            <li><a href="#">Campus Life</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact Us</a></li>
-        </ul>
-    </nav>
-</div>
-<div class="separator"></div>
-<section class="content">
-    <div class="image-container">
-    <img src="images/buildingHome.jpeg" alt="building" class="large-building">
-        <div class ="overlay-text">
-            <h1>GET READY</h1>
-            <p>TO DISCOVER Q.I.T.</p>
+    <header class="header-container">
+        <div class="logo-name-container">
+            <h1 class="QIT">QIT</h1>
+            <img src="images/logo.png" alt="Logo" class="logo">
+            <h1 class="uni-name">Quezon Institute<br>of Technology</h1>
+            <button class="register-button">Register</button>
+            <button class="login-button">Log in</button>
+            <button class="search-button">
+                <img src="images/searchicon.png" alt="Search" class="icon">
+            </button>
+            <button class="menu-button">
+                <img src="images/menuicon.png" alt="Menu" class="icon">
+            </button>
+        </div>
+    </header>
+
+    <div class="slider-container">
+        <!-- The video elements for the slider -->
+        <video class="slider-video" src="images/videosample.mp4" autoplay muted></video>
+        <video class="slider-video" src="images/videosample.mp4"></video>
+        <video class="slider-video" src="images/videosample.mp4"></video>
+
+         <!-- Text elements corresponding to each video -->
+         <div class="slider-text active-text" id="text1">Excel at QIT: 
+            <br> A World-Class Technological 
+            <br> Institute in the Philippines
+
+        </div>
+            
+        <div class="slider-text" id="text2">100 YEARS
+            <br> OF ACADEMIC 
+            <br>EXCELLENCE        </div>
+        <div class="slider-text" id="text3">Join Us Today and 
+            <br>Transform Your Future</div>
+       
+
+        <!-- Buttons for navigation -->
+        <div class="controls">
+            <button id="nextVideo">Next Video</button>
         </div>
     </div>
-            <div class="scrollable-box">
-               <div class="image-menu">
-                <div class = "menu-item">
-                    <img src="images/undergraduate.png" alt="Menu 1">
-                    <p class="menu-title">UNDERGRADUATE</p>
-                </div>
-                <div class = "menu-item">
-                    <img src="images/graduate.png" alt="Menu 2">
-                    <p class="menu-title">GRADUATE</p>
-                </div>
-                <div class = "menu-item">
-                    <img src="images/transfer.png" alt="Menu 3">
-                    <p class="menu-title">TRANSFER</p>
-                </div>
-                <div class = "menu-item">
-                    <img src="images/financial.png" alt="Menu 4">
-                    <p class="menu-title">FINANCIAL</p>
-                </div>
-                <div class = "menu-item">
-                    <img src="images/visit.png" alt="Menu 5">
-                    <p class="menu-title">VISIT US</p>
-                </div>
-               </div>
-            </div>
-</section>
+    <!-- Modal -->
+    <div class="modal" id="registrationModal">
+        <div class="modal-content">
+            <span class="close-button" id="closeButton">&times;</span>
+            <h2>Register Student</h2>
+            <form id="registrationForm">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" required>
+                <br>
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" required>
+                <br>
+                <label for="middleName">Middle Name:</label>
+                <input type="text" id="middleName">
+                <br>
+                <label for="age">Age:</label>
+                <input type="number" id="age" required>
+                <br>
+                <label for="address">Address:</label>
+                <input type="text" id="address" required>
+                <br>
+                <label for="contactNumber">Contact Number:</label>
+                <input type="text" id="contactNumber" required>
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                <br>
+                <label for="program">Intended Program:</label>
+                <input type="text" id="program" required>
+                <br>
+                <button type="submit">Submit</button>
+            </form>
+            <div id="confirmationMessage" class="confirmation-message"></div>
+        </div>
+    </div>
+   
+   
+
+<div class="content">
+    <section id="about">
+        <h2>ABOUT</h2>
+        <p>Quezon Institute of Technology (QIT) stands as a beacon of innovation and excellence in higher education, dedicated to nurturing the next generation of leaders and innovators. Our mission is to provide a transformative learning experience that empowers students with the knowledge, skills, and values to excel in their chosen fields and make meaningful contributions to society. Our vision is to be a globally recognized institution, renowned for its academic rigor, cutting-edge research, and vibrant campus community.</p>
+        <p>QIT boasts a rich history of academic excellence and a commitment to providing a holistic education. We offer a wide range of undergraduate and graduate programs across various disciplines, including engineering, technology, business, and the arts. Beyond the classroom, QIT fosters a vibrant campus life, offering a multitude of opportunities for student engagement, extracurricular activities, and community service. Through state-of-the-art facilities, dedicated faculty, and a supportive learning environment, we aim to equip our students with the tools and knowledge they need to succeed in an ever-evolving world.</p>
+    </section>
+    <section id="campusLife">
+        <h2>CAMPUS LIFE</h2>
+        <p>Quezon Institute of Technology (QIT) stands on a sprawling campus nestled amidst lush greenery, providing a serene environment conducive to learning and personal growth. Our modern facilities include cutting-edge laboratories, well-equipped libraries, and spacious classrooms designed for interactive learning. QIT is home to a diverse community of students, faculty, and staff, united by a shared passion for knowledge and a commitment to excellence.</p>
+        <p>Our dedication to innovation extends beyond the curriculum, with QIT boasting a vibrant research culture that drives advancements in various fields. We offer numerous research opportunities for students, fostering their critical thinking and problem-solving skills. QIT also provides access to industry partnerships and collaborations, ensuring that our students gain real-world experience and are well-prepared for successful careers. Furthermore, our commitment to social responsibility extends beyond academics, with QIT actively engaged in community outreach programs and initiatives aimed at promoting sustainable development and improving the lives of those around us.</p>
+    </section>
+    <section id="mAndV">
+        <h2>Mission and Vision</h2>
+        <p><strong>Mission:</strong> To empower individuals with transformative education, cultivate innovative leaders, and contribute to the betterment of society through cutting-edge research and development.</p>
+        <p><strong>Vision:</strong> To be a globally recognized institution of excellence, renowned for its academic rigor, innovation, and commitment to producing graduates who are skilled, adaptable, and ethically responsible global citizens.</p>
+    </section>
+    <section id="programs">
+        <h2>Programs Offered</h2>
+        <p>QIT offers a comprehensive range of academic programs designed to meet the diverse needs and aspirations of our students. Our programs are carefully crafted to provide a strong foundation in theoretical knowledge, coupled with practical application and real-world experience. We are committed to equipping our graduates with the skills and competencies necessary to thrive in today's competitive job market.</p>
+        <p>Explore our program offerings below:</p>
+        <h3>College of Engineering:</h3>
+        <ul>
+            <li>Bachelor of Science in Civil Engineering</li>
+            <li>Bachelor of Science in Electrical Engineering</li>
+            <li>Bachelor of Science in Mechanical Engineering</li>
+            <li>Bachelor of Science in Computer Engineering</li>
+        </ul>
+        <h3>College of Business and Management:</h3>
+        <ul>
+            <li>Bachelor of Science in Business Administration</li>
+            <li>Bachelor of Science in Accountancy</li>
+            <li>Bachelor of Science in Marketing Management</li>
+        </ul>
+        <h3>College of Arts and Sciences:</h3>
+        <ul>
+            <li>Bachelor of Arts in Communication Arts</li>
+            <li>Bachelor of Science in Psychology</li>
+            <li>Bachelor of Science in Biology</li>
+        </ul>
+        <h3>Graduate School:</h3>
+        <ul>
+            <li>Master of Science in Engineering</li>
+            <li>Master of Business Administration</li>
+            <li>Master of Arts in Education</li>
+        </ul>
+        <h3>College of Computer Studies:</h3>
+        <ul>
+            <li>Bachelor of Science in Information Technology</li>
+            <li>Bachelor of Science in Computer Science</li>
+            <li>Bachelor of Science in Software Engineering</li>
+            <li>Bachelor of Science in Cybersecurity</li>
+        </ul>
+    </section>
+
+</div>
 </body>
 </html>
