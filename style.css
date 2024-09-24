@@ -25,7 +25,7 @@ body {
     align-items: center;
     border: 0px;
     border-radius: 0px;
-    margin-left: 400px;
+    margin-left: 300px;
 }
 .QIT{
     font-size: 12px;
@@ -43,7 +43,7 @@ body {
     font-size: 14px;
     color: rgb(145, 13, 13);
     margin-left:-10px;
-    margin-right: 800px;
+    margin-right: 500px;
 }
 
 .QIT{
@@ -58,7 +58,7 @@ body {
     display: flex;
     margin-left: 700px;
     right: 20px;
-    left: 700px;
+    left: 300px;
 }
 
 .register-button {
@@ -101,6 +101,7 @@ body {
 .search-button, .menu-button{
     background: none;
     border: none;
+    margin-right: 200px;
 }
 .search-button{
     margin-right: 15px;
