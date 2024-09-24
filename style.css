@@ -55,13 +55,14 @@ body {
 .header-buttons {
     display: flex;
     align-items: center; 
-    margin-left: auto; 
+    margin-left: auto;
+    margin-left: 700px; 
 }
 
 .register-button {
     padding: 10px 15px;
     background-color: rgb(99, 7, 7);
-    color: white;
+
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -69,7 +70,7 @@ body {
 }
 
 .register-button:hover {
-    background-color: rgb(77, 6, 6); 
+    background-color: rgb(167, 110, 110); 
 }
 
 .header-buttons button {
