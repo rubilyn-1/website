@@ -11,7 +11,7 @@ body {
 .header-container {
     width: 100%; 
     background: rgba(128, 128, 128, 0.5); /* Translucent gray */
-    padding: 20px; 
+    padding: 10px; 
     display: flex;
     justify-content: center; 
     align-items: center; 
@@ -62,7 +62,7 @@ body {
 .register-button {
     padding: 10px 15px;
     background-color: rgb(99, 7, 7);
-
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
