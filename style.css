@@ -11,13 +11,17 @@ body {
 
 .header-container {
     width: 100%; 
-    background: rgba(128, 128, 128, 0.5); /* Translucent gray */
+    background: rgba(230, 224, 224, 0.363); 
     padding: 10px; 
     display: flex;
     justify-content: center; 
     align-items: center; 
     justify-content: flex-start;
     z-index: 9999;
+    position: relative;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    position: fixed;
 }
 
 
@@ -57,9 +61,7 @@ body {
 }
 .header-buttons {
     display: flex;
-    margin-left: 700px;
-    right: 20px;
-    left: 300px;
+    margin-left: auto;
 }
 
 .register-button {
@@ -149,20 +151,72 @@ body {
     margin-top: 20px;
     display: block;
 }
-.background-video {
-    position: absolute; 
+.slider-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.slider-video {
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100vw; 
-    height: 100vh; 
-    object-fit: cover; 
-    z-index: 1; 
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.5s ease; /* Dissolve effect */
+    z-index: 1;
+}
+
+.slider-video.active {
+    opacity: 1;
+}
+/* Text Styling */
+.slider-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8); /* Pop-up effect on initial load */
+    color: rgb(66, 14, 14);
+    font-size: 48px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 1.5s ease, transform 0.5s ease; 
+    justify-content: center;
+    display: flex;
+}
+
+.slider-text.active-text {
+    opacity: 1;
+    transform: scale(1.1); /* Pop-up effect when active */
+}
+.controls {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #555;
 }
 
 .content {
     position: relative; 
     z-index: 2; 
-    color: white; 
+    color: rgb(141, 20, 20); 
     padding: 20px;
     margin-top: 60px;
 }
