@@ -186,7 +186,7 @@ body {
     left: 30%;
     transform: translate(-50%, -50%) scale(0.8); /* Pop-up effect on initial load */
     color: rgb(255, 174, 0);
-    font-size: 70px;
+    font-size: 100px;
     text-align: center;
     opacity: 0;
     transition: opacity 1.5s ease, transform 0.5s ease; 
