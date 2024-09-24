@@ -133,25 +133,35 @@ button:hover {
     background-color: #555;
 }
 
-@media(max-width: 650px){
+@media(max-width: 750px){
     .register-button, .login-button{
         display: none;
     }
 
-    .logo{
-        height: 100%;
-        width: auto;
-    }
-}
-
-@media(max-width: 650px){
-    .register-button, .login-button{
-        display: none;
+    svg{
+        width: 16px;
+        height: 16px;
     }
 
     .logo{
         height: auto;
-        width: 75%;
+        width: 80%;
+    }
+}
+
+@media(max-width: 420px){
+    .register-button, .login-button{
+        display: none;
+    }
+
+    svg{
+        width: 16px;
+        height: 16px;
+    }
+
+    .logo{
+        height: auto;
+        width: 125%;
     }
 }
 
