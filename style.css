@@ -17,6 +17,7 @@ body {
     justify-content: center; 
     align-items: center; 
     justify-content: flex-start;
+    z-index: 9999;
 }
 
 
@@ -147,4 +148,21 @@ body {
 .confirmation-message {
     margin-top: 20px;
     display: block;
+}
+.background-video {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100vw; 
+    height: 100vh; 
+    object-fit: cover; 
+    z-index: 1; 
+}
+
+.content {
+    position: relative; 
+    z-index: 2; 
+    color: white; 
+    padding: 20px;
+    margin-top: 60px;
 }
