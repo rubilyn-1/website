@@ -6,16 +6,10 @@
         <title>Quezon Institute of Technology</title>
         <link rel="icon" type="image/jpg" href="images/logo.png">
         <link rel="stylesheet" href="style2.css">
-        <!-- <script src="script.js" defer></script> -->
+        <script src="script.js" defer></script>
     </head>
 
     <body>
-
-        <div class="slider-container">
-            <video autoplay muted loop>
-                <source src="images/videosample.mp4" type="video/mp4">
-            </video>
-        </div>
 
         <nav>
 
@@ -38,6 +32,64 @@
             </ul>
         </nav>
 
+        <div class="slider-container">
+            <video class="slider-video" src="images/videosample.mp4" autoplay muted></video>
+            <video class="slider-video" src="images/videosample.mp4"></video>
+            <video class="slider-video" src="images/videosample.mp4"></video>
+    
+             <!-- Text elements corresponding to each video -->
+             <div class="slider-text active-text" id="text1">Excel at QIT: 
+                <br> A World-Class Technological 
+                <br> Institute in the Philippines
+    
+            </div>
+                
+            <div class="slider-text" id="text2">100 YEARS
+                <br> OF ACADEMIC 
+                <br>EXCELLENCE        </div>
+            <div class="slider-text" id="text3">Join Us Today and 
+                <br>Transform Your Future</div>
+           
+    
+            <div class="controls">
+                <button id="nextVideo">Next Video</button>
+            </div>
+        </div>
+
+        <div class="modal" id="registrationModal">
+            <div class="modal-content">
+                <span class="close-button" id="closeButton">&times;</span>
+                <h2>Register Student</h2>
+                <form id="registrationForm">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" required>
+                    <br>
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" required>
+                    <br>
+                    <label for="middleName">Middle Name:</label>
+                    <input type="text" id="middleName">
+                    <br>
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" required>
+                    <br>
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" required>
+                    <br>
+                    <label for="contactNumber">Contact Number:</label>
+                    <input type="text" id="contactNumber" required>
+                    <br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                    <br>
+                    <label for="program">Intended Program:</label>
+                    <input type="text" id="program" required>
+                    <br>
+                    <button type="submit">Submit</button>
+                </form>
+                <div id="confirmationMessage" class="confirmation-message"></div>
+            </div>
+        </div>
         <script>
             
             function showSidebar(){

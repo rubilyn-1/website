@@ -19,6 +19,7 @@ nav{
     backdrop-filter: blur(10px);
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
     padding: 10px;
+    z-index: 998;
 }
 
 nav ul{
@@ -48,6 +49,14 @@ nav a:hover{
 
 nav li:first-child{
     margin-right: auto;
+}
+
+.slider-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1;
 }
 
 .sidebar{
@@ -88,6 +97,48 @@ nav li:first-child{
     height: 100%; 
     object-fit: cover; 
     z-index: -100;
+}
+
+.slider-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.5s ease; /* Dissolve effect */
+    filter: grayscale(50%) blur(3px) brightness(0.9);
+    filter: contrast(50%); /* Increase contrast */
+
+
+    z-index: 1;
+}
+
+
+.slider-video.active {
+    opacity: 1;
+}
+/* Text Styling */
+.slider-text {
+    position: absolute;
+    top: 70%;
+    left: 30%;
+    transform: translate(-50%, -50%) scale(0.8); /* Pop-up effect on initial load */
+    color: rgb(255, 174, 0);
+    font-size: 100px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 1.5s ease, transform 0.5s ease; 
+    justify-content: center;
+    display: block;
+    z-index: 55;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 5px;
+}
+
+.slider-text.active-text {
+    opacity: 1;
 }
 
 .logo{
@@ -131,6 +182,50 @@ button {
 
 button:hover {
     background-color: #555;
+}
+
+.controls {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.5); 
+    
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    max-width: 500px;
+    position: relative;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 @media(max-width: 750px){
