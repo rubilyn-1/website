@@ -43,6 +43,7 @@ body {
     font-size: 14px;
     color: rgb(145, 13, 13);
     margin-left:-10px;
+    margin-right: 800px;
 }
 
 .QIT{
@@ -55,9 +56,9 @@ body {
 }
 .header-buttons {
     display: flex;
-
-
+    margin-left: 700px;
     right: 20px;
+    left: 700px;
 }
 
 .register-button {
@@ -67,13 +68,24 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-right: 10px; 
+    margin-right: 20px; 
 }
 
+.login-button{
+    padding: 10px 15px;
+    background-color: rgb(49, 42, 42);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px; 
+}
 .register-button:hover {
     background-color: rgb(167, 110, 110); 
 }
-
+.login-button:hover{
+    background-color: rgb(88, 88, 86);
+}
 .header-buttons button {
     background: none; 
     border: none; 
@@ -85,10 +97,15 @@ body {
 .icon {
     width: 30px; 
     height: 30px;
-<<<<<<< Updated upstream
 }
-
-
+.search-button, .menu-button{
+    background: none;
+    border: none;
+}
+.search-button{
+    margin-right: 15px;
+    margin-left: 15px;
+}
 .modal {
     display: none; 
     position: fixed; 
@@ -128,7 +145,5 @@ body {
 
 .confirmation-message {
     margin-top: 20px;
-=======
     display: block;
->>>>>>> Stashed changes
 }
