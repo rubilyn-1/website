@@ -44,142 +44,160 @@
   
 
 
-    <div class="slider-container">
-        <!-- The video elements for the slider -->
-        <video class="slider-video" src="images/videosample.mp4" autoplay muted></video>
-        <video class="slider-video" src="images/videosample.mp4"></video>
-        <video class="slider-video" src="images/videosample.mp4"></video>
-
-         <!-- Text elements corresponding to each video -->
-         <div class="slider-text active-text" id="text1">Excel at QIT: 
-            <br> A World-Class Technological 
-            <br> Institute in the Philippines
-
+        <div class="slider-container">
+            <video class="slider-video" src="images/videosample.mp4" autoplay muted></video>
+            <video class="slider-video" src="images/videosample.mp4"></video>
+            <video class="slider-video" src="images/videosample.mp4"></video>
+    
+             <!-- Text elements corresponding to each video -->
+             <div class="slider-text" id="text1">Excel at QIT: 
+                <br> A World-Class Technological 
+                <br> Institute in the Philippines
+    
+            </div>
+                
+            <div class="slider-text" id="text2">100 YEARS
+                <br> OF ACADEMIC 
+                <br>EXCELLENCE        </div>
+            <div class="slider-text" id="text3">Join Us Today and 
+                <br>Transform Your Future</div>
+           
+    
+            <div class="controls">
+                <button id="nextVideo">Next Video</button>
+            </div>
         </div>
+
+        <div class="modal" id="registrationModal">
+            <div class="modal-content">
+                <span class="close-button" id="closeButton">&times;</span>
+                <h2>Register Student</h2>
+                <form id="registrationForm">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" required>
+                    <br>
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" required>
+                    <br>
+                    <label for="middleName">Middle Name:</label>
+                    <input type="text" id="middleName">
+                    <br>
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" required>
+                    <br>
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" required>
+                    <br>
+                    <label for="contactNumber">Contact Number:</label>
+                    <input type="text" id="contactNumber" required>
+                    <br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                    <br>
+                    <label for="program">Intended Program:</label>
+                    <select id="program" required>
+                        <option value="" disabled selected>Select a program</option>
+                        
+                        <optgroup label="College of Engineering">
+                            <option value="Bachelor of Science in Civil Engineering">Bachelor of Science in Civil Engineering</option>
+                            <option value="Bachelor of Science in Electrical Engineering">Bachelor of Science in Electrical Engineering</option>
+                            <option value="Bachelor of Science in Mechanical Engineering">Bachelor of Science in Mechanical Engineering</option>
+                            <option value="Bachelor of Science in Computer Engineering">Bachelor of Science in Computer Engineering</option>
+                        </optgroup>
+                        
+                        <optgroup label="College of Business and Management">
+                            <option value="Bachelor of Science in Business Administration">Bachelor of Science in Business Administration</option>
+                            <option value="Bachelor of Science in Accountancy">Bachelor of Science in Accountancy</option>
+                            <option value="Bachelor of Science in Marketing Management">Bachelor of Science in Marketing Management</option>
+                        </optgroup>
+                        
+                        <optgroup label="College of Arts and Sciences">
+                            <option value="Bachelor of Arts in Communication Arts">Bachelor of Arts in Communication Arts</option>
+                            <option value="Bachelor of Science in Psychology">Bachelor of Science in Psychology</option>
+                            <option value="Bachelor of Science in Biology">Bachelor of Science in Biology</option>
+                        </optgroup>
+                        
+                        <optgroup label="Graduate School">
+                            <option value="Master of Science in Engineering">Master of Science in Engineering</option>
+                            <option value="Master of Business Administration">Master of Business Administration</option>
+                            <option value="Master of Arts in Education">Master of Arts in Education</option>
+                        </optgroup>
+                        
+                        <optgroup label="College of Computer Studies">
+                            <option value="Bachelor of Science in Information Technology">Bachelor of Science in Information Technology</option>
+                            <option value="Bachelor of Science in Computer Science">Bachelor of Science in Computer Science</option>
+                            <option value="Bachelor of Science in Software Engineering">Bachelor of Science in Software Engineering</option>
+                            <option value="Bachelor of Science in Cybersecurity">Bachelor of Science in Cybersecurity</option>
+                        </optgroup>
+                    </select>
+                    
+                    <br>
+                    <button type="submit">Submit</button>
+                </form>
+                <div id="confirmationMessage" class="confirmation-message"></div>
+            </div>
+        </div>
+
+        <!-- Add this to the body, below the existing modal -->
+<div class="modal" id="loginModal">
+    <div class="modal-content">
+        <span class="close-button" id="closeLoginButton">&times;</span>
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+            <br>
+            <button type="submit">Log in</button>
+        </form>
+        <div id="loginMessage" class="confirmation-message"></div>
+    </div>
+</div>
+
+<!-- Placeholder for user details page -->
+<div id="userDetails" style="display:none;">
+    <h2>User Details</h2>
+    <p id="userInfo"></p>
+</div>
+
+
+
+        
+        <script>
             
-        <div class="slider-text" id="text2">100 YEARS
-            <br> OF ACADEMIC 
-            <br>EXCELLENCE        </div>
-        <div class="slider-text" id="text3">Join Us Today and 
-            <br>Transform Your Future</div>
-       
+            function showSidebar(){
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'flex'
+            }
+            function hideSidebar(){
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'none'
+            }
+  
+        </script>
 
-        <!-- Buttons for navigation -->
-        <div class="controls">
-            <button id="nextVideo">Next Video</button>
-        </div>
-    </div>
-    <!-- Modal -->
-    <div class="modal" id="registrationModal">
-        <div class="modal-content">
-            <span class="close-button" id="closeButton">&times;</span>
-            <h2>Register Student</h2>
-            <form id="registrationForm">
-                <label for="lastName">Last Name:</label>
-                <input type="text" id="lastName" required>
-                <br>
-                <label for="firstName">First Name:</label>
-                <input type="text" id="firstName" required>
-                <br>
-                <label for="middleName">Middle Name:</label>
-                <input type="text" id="middleName">
-                <br>
-                <label for="age">Age:</label>
-                <input type="number" id="age" required>
-                <br>
-                <label for="address">Address:</label>
-                <input type="text" id="address" required>
-                <br>
-                <label for="contactNumber">Contact Number:</label>
-                <input type="text" id="contactNumber" required>
-                <br>
-                <label for="email">Email:</label>
-                <input type="email" id="email" required>
-                <br>
-                <label for="program">Intended Program:</label>
-                <input type="text" id="program" required>
-                <br>
-                <button type="submit">Submit</button>
-            </form>
-            <div id="confirmationMessage" class="confirmation-message"></div>
-        </div>
-    </div>
-   
-
-
-
-
-<div class="content">
-    <section class="about">
-        <div class="about-content">
-            <h2>ABOUT</h2>
-            <p>Quezon Institute of Technology (QIT) stands as a beacon of innovation and excellence in higher education, dedicated to nurturing the next generation of leaders and innovators. Our mission is to provide a transformative learning experience that empowers students with the knowledge, skills, and values to excel in their chosen fields and make meaningful contributions to society. Our vision is to be a globally recognized institution, renowned for its academic rigor, cutting-edge research, and vibrant campus community.</p>
-            <p>QIT boasts a rich history of academic excellence and a commitment to providing a holistic education. We offer a wide range of undergraduate and graduate programs across various disciplines, including engineering, technology, business, and the arts. Beyond the classroom, QIT fosters a vibrant campus life, offering a multitude of opportunities for student engagement, extracurricular activities, and community service. Through state-of-the-art facilities, dedicated faculty, and a supportive learning environment, we aim to equip our students with the tools and knowledge they need to succeed in an ever-evolving world.</p>
-        </div>
-        <div class="about-image">
-            <img src="images/outside.jpg" alt="students in the university">
-        </div>
-    </section>
-
-
-    <section class="campusLife">
-        <div class="cl-content">
-            <h2>CAMPUS LIFE</h2>
-            <p>Quezon Institute of Technology (QIT) stands on a sprawling campus nestled amidst lush greenery, providing a serene environment conducive to learning and personal growth. Our modern facilities include cutting-edge laboratories, well-equipped libraries, and spacious classrooms designed for interactive learning. QIT is home to a diverse community of students, faculty, and staff, united by a shared passion for knowledge and a commitment to excellence.</p>
-            <p>Our dedication to innovation extends beyond the curriculum, with QIT boasting a vibrant research culture that drives advancements in various fields. We offer numerous research opportunities for students, fostering their critical thinking and problem-solving skills. QIT also provides access to industry partnerships and collaborations, ensuring that our students gain real-world experience and are well-prepared for successful careers. Furthermore, our commitment to social responsibility extends beyond academics, with QIT actively engaged in community outreach programs and initiatives aimed at promoting sustainable development and improving the lives of those around us.</p>
-        </div>
-        <div class="image-grid">
-            <div class="card">
-                <img src="images/classroom.jpeg" alt="Undergraduate students">
-            </div>
-            <div class="card">
-                <img src="images/computerlab.jpeg" alt="Graduate students">
-            </div>
-            <div class="card">
-                <img src="images/hall.jpg" alt="Online students">
-            </div>
-            <div class="card">
-                <img src="images/library.jpg" alt="Senior High students">
-            </div>
-        </div>
-
-    </section>
-    
-    
-    <section class="mAndV">  
-        <!-- Box containing the mission and vision content -->
-        <div class="mission-vision-box">
-            <div class="column">
-                <h3>Mission</h3>
-                <p>
-                    To empower individuals with transformative education, cultivate innovative leaders, 
-                    and contribute to the betterment of society through cutting-edge research and development.
-                </p>
-            </div>
-            <div class="separator"></div> <!-- Separator line -->
-            <div class="column">
-                <h3>Vision</h3>
-                <p>
-                    To be a globally recognized institution of excellence, renowned for its academic rigor, 
-                    innovation, and commitment to producing graduates who are skilled, adaptable, 
-                    and ethically responsible global citizens.
-                </p>
-            </div>
-        </div>
-    </section>
-   
-   
-   
-    <section class="programs">
-
-        <div class="programs-intro">
-            <h2>Programs Offered</h2>
-            <p>QIT offers a comprehensive range of academic programs designed to meet the diverse needs and aspirations of our students. Our programs are carefully crafted to provide a strong foundation in theoretical knowledge, coupled with practical application and real-world experience. We are committed to equipping our graduates with the skills and competencies necessary to thrive in today's competitive job market.</p>
-            <p>Explore our program offerings below:</p>
-        </div>
-
-        <div class="progs-offered">
-            <div class="column-p">
+        <div class="content">
+            <section id="about">
+                <h2>ABOUT</h2>
+                <p>Quezon Institute of Technology (QIT) stands as a beacon of innovation and excellence in higher education, dedicated to nurturing the next generation of leaders and innovators. Our mission is to provide a transformative learning experience that empowers students with the knowledge, skills, and values to excel in their chosen fields and make meaningful contributions to society. Our vision is to be a globally recognized institution, renowned for its academic rigor, cutting-edge research, and vibrant campus community.</p>
+                <p>QIT boasts a rich history of academic excellence and a commitment to providing a holistic education. We offer a wide range of undergraduate and graduate programs across various disciplines, including engineering, technology, business, and the arts. Beyond the classroom, QIT fosters a vibrant campus life, offering a multitude of opportunities for student engagement, extracurricular activities, and community service. Through state-of-the-art facilities, dedicated faculty, and a supportive learning environment, we aim to equip our students with the tools and knowledge they need to succeed in an ever-evolving world.</p>
+            </section>
+            <section id="campusLife">
+                <h2>CAMPUS LIFE</h2>
+                <p>Quezon Institute of Technology (QIT) stands on a sprawling campus nestled amidst lush greenery, providing a serene environment conducive to learning and personal growth. Our modern facilities include cutting-edge laboratories, well-equipped libraries, and spacious classrooms designed for interactive learning. QIT is home to a diverse community of students, faculty, and staff, united by a shared passion for knowledge and a commitment to excellence.</p>
+                <p>Our dedication to innovation extends beyond the curriculum, with QIT boasting a vibrant research culture that drives advancements in various fields. We offer numerous research opportunities for students, fostering their critical thinking and problem-solving skills. QIT also provides access to industry partnerships and collaborations, ensuring that our students gain real-world experience and are well-prepared for successful careers. Furthermore, our commitment to social responsibility extends beyond academics, with QIT actively engaged in community outreach programs and initiatives aimed at promoting sustainable development and improving the lives of those around us.</p>
+            </section>
+            <section id="mAndV">
+                <h2>Mission and Vision</h2>
+                <p><strong>Mission:</strong> To empower individuals with transformative education, cultivate innovative leaders, and contribute to the betterment of society through cutting-edge research and development.</p>
+                <p><strong>Vision:</strong> To be a globally recognized institution of excellence, renowned for its academic rigor, innovation, and commitment to producing graduates who are skilled, adaptable, and ethically responsible global citizens.</p>
+            </section>
+            <section id="programs">
+                <h2>Programs Offered</h2>
+                <p>QIT offers a comprehensive range of academic programs designed to meet the diverse needs and aspirations of our students. Our programs are carefully crafted to provide a strong foundation in theoretical knowledge, coupled with practical application and real-world experience. We are committed to equipping our graduates with the skills and competencies necessary to thrive in today's competitive job market.</p>
+                <p>Explore our program offerings below:</p>
                 <h3>College of Engineering:</h3>
                 <ul>
                     <li>Bachelor of Science in Civil Engineering</li>
@@ -187,32 +205,24 @@
                     <li>Bachelor of Science in Mechanical Engineering</li>
                     <li>Bachelor of Science in Computer Engineering</li>
                 </ul>
-            </div>
-            <div class="column-p">
                 <h3>College of Business and Management:</h3>
                 <ul>
                     <li>Bachelor of Science in Business Administration</li>
                     <li>Bachelor of Science in Accountancy</li>
                     <li>Bachelor of Science in Marketing Management</li>
                 </ul>
-            </div>
-            <div class="column-p">
                 <h3>College of Arts and Sciences:</h3>
                 <ul>
                     <li>Bachelor of Arts in Communication Arts</li>
                     <li>Bachelor of Science in Psychology</li>
                     <li>Bachelor of Science in Biology</li>
                 </ul>
-            </div>
-            <div class="column-p">
                 <h3>Graduate School:</h3>
                 <ul>
                     <li>Master of Science in Engineering</li>
                     <li>Master of Business Administration</li>
                     <li>Master of Arts in Education</li>
                 </ul>
-            </div>
-            <div class="column-p">
                 <h3>College of Computer Studies:</h3>
                 <ul>
                     <li>Bachelor of Science in Information Technology</li>
@@ -220,10 +230,15 @@
                     <li>Bachelor of Science in Software Engineering</li>
                     <li>Bachelor of Science in Cybersecurity</li>
                 </ul>
-            </div>
+            </section>
+        
         </div>
-    </section>
-
-</div>
-</body>
+        <script>
+            function hideSidebar() {
+                const sidebar = document.querySelector('.sidebar');
+                sidebar.style.display = 'none';
+            }
+        </script>
+    </body>
+    
 </html>
