@@ -17,7 +17,7 @@ body{
     left: 0;
     width: 100%;
     background-color: #9e0000; /* or your desired color */
-    z-index: 1000; /* Ensures it stays above other content */
+    z-index: 20; /* Ensures it stays above other content */
 }
 
 .fixed-nav1 {
@@ -38,7 +38,7 @@ nav{
     backdrop-filter: blur(10px);
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
     padding: 10px;
-    z-index: 998;
+    z-index: 9998;
 }
 
 nav ul{
