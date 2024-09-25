@@ -96,7 +96,42 @@
                     <input type="email" id="email" required>
                     <br>
                     <label for="program">Intended Program:</label>
-                    <input type="text" id="program" required>
+                    <select id="program" required>
+                        <option value="" disabled selected>Select a program</option>
+                        
+                        <optgroup label="College of Engineering">
+                            <option value="Bachelor of Science in Civil Engineering">Bachelor of Science in Civil Engineering</option>
+                            <option value="Bachelor of Science in Electrical Engineering">Bachelor of Science in Electrical Engineering</option>
+                            <option value="Bachelor of Science in Mechanical Engineering">Bachelor of Science in Mechanical Engineering</option>
+                            <option value="Bachelor of Science in Computer Engineering">Bachelor of Science in Computer Engineering</option>
+                        </optgroup>
+                        
+                        <optgroup label="College of Business and Management">
+                            <option value="Bachelor of Science in Business Administration">Bachelor of Science in Business Administration</option>
+                            <option value="Bachelor of Science in Accountancy">Bachelor of Science in Accountancy</option>
+                            <option value="Bachelor of Science in Marketing Management">Bachelor of Science in Marketing Management</option>
+                        </optgroup>
+                        
+                        <optgroup label="College of Arts and Sciences">
+                            <option value="Bachelor of Arts in Communication Arts">Bachelor of Arts in Communication Arts</option>
+                            <option value="Bachelor of Science in Psychology">Bachelor of Science in Psychology</option>
+                            <option value="Bachelor of Science in Biology">Bachelor of Science in Biology</option>
+                        </optgroup>
+                        
+                        <optgroup label="Graduate School">
+                            <option value="Master of Science in Engineering">Master of Science in Engineering</option>
+                            <option value="Master of Business Administration">Master of Business Administration</option>
+                            <option value="Master of Arts in Education">Master of Arts in Education</option>
+                        </optgroup>
+                        
+                        <optgroup label="College of Computer Studies">
+                            <option value="Bachelor of Science in Information Technology">Bachelor of Science in Information Technology</option>
+                            <option value="Bachelor of Science in Computer Science">Bachelor of Science in Computer Science</option>
+                            <option value="Bachelor of Science in Software Engineering">Bachelor of Science in Software Engineering</option>
+                            <option value="Bachelor of Science in Cybersecurity">Bachelor of Science in Cybersecurity</option>
+                        </optgroup>
+                    </select>
+                    
                     <br>
                     <button type="submit">Submit</button>
                 </form>

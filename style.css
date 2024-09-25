@@ -29,6 +29,11 @@ body{
 
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+
 nav{
     position: fixed;
     top: 0;
@@ -101,6 +106,7 @@ nav li:first-child{
 .sidebar a{
     width: 100%;
 }
+
 
 .slider-container {
     position: relative;

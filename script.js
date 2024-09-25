@@ -126,4 +126,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Initially play the first video
     switchVideo(currentIndex);
+
+
+
+    
 });
