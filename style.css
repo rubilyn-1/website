@@ -10,6 +10,25 @@ body{
     font-family: Poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+
+.fixed-nav,.fixed-nav1 {
+    position: fixed; /* Keeps the nav fixed at the top */
+    top: 115%;
+    left: 0;
+    width: 100%;
+    background-color: #9e0000; /* or your desired color */
+    z-index: 1000; /* Ensures it stays above other content */
+}
+
+.fixed-nav1 {
+    top: 150%;
+    background-color: #c77e00; /* or your desired color */
+    max-height: 2px;
+    padding: 7px;
+
+
+}
+
 nav{
     position: fixed;
     top: 0;
@@ -145,6 +164,17 @@ nav li:first-child{
     height: 50px;
 }
 
+.logo-container {
+    position: absolute;
+    left: 20%;
+    text-align: center;
+    align-items: center;
+    top: 0;
+    z-index: 999;
+}
+
+
+
 svg{
     fill: #0f1016;
 }
@@ -158,6 +188,7 @@ svg{
     cursor: pointer;
     margin-right: 20px; 
     margin-top: 5px;
+ 
 }
 
 .login-button{
@@ -169,6 +200,7 @@ svg{
     cursor: pointer;
     margin-right: 10px; 
     margin-top: 5px;
+    
 }
 
 button {
