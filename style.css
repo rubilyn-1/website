@@ -145,7 +145,7 @@ nav li:first-child{
 /* Text Styling */
 .slider-text {
     position: absolute;
-    top: 70%;
+    top: 50%;
     left: 30%;
     transform: translate(-50%, -50%) scale(0.8); /* Pop-up effect on initial load */
     color: rgb(255, 174, 0);
@@ -217,84 +217,343 @@ button:hover {
     background-color: #555;
 }
 
-.controls {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    z-index: 10;
+.about{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    padding: 50px 20px;
+    gap: 30px;
+    max-width: 1200px;
+    margin:0 auto;
 }
 
-.modal {
-    display: none; 
-    position: fixed; 
-    z-index: 1; 
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto; 
-    background-color: rgba(0, 0, 0, 0.5); 
-    
+.about-content{
+    flex: 2;
+    padding-right: 20px;
+    line-height: 1.6;
+    max-width: 1200px;
 }
 
-.modal-content {
-    background-color: #fff;
-    margin: 15% auto; 
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; 
-    max-width: 500px;
+.about-content h2 {
+    font-size: 36px;
+    color: #d32f2f;
+    margin-bottom: 40px;
+}
+
+.about-content p {
+    font-size: 20px;
+    color: #333;
+}
+
+.about-image {
+    flex: 1; 
+    overflow: hidden;
+    max-width: 100%;
     position: relative;
 }
 
-.close-button {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+.about-image img{
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
 }
 
-.close-button:hover,
-.close-button:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-html {
-    scroll-behavior: smooth;
-}
-
-@media(max-width: 750px){
-    .register-button, .login-button{
-        display: none;
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column;
+        text-align: center;
     }
 
-    svg{
-        width: 16px;
-        height: 16px;
+    .about-content {
+        padding-right: 0;
     }
 
-    .logo{
-        height: auto;
-        width: 80%;
+    .about-image img {
+        max-width: 80%;
+        margin: 20px 0;
     }
 }
 
-@media(max-width: 420px){
-    .register-button, .login-button{
-        display: none;
+.campusLife{
+    background-color: #d32f2f;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.cl-content h2{
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.cl-content p{
+    max-width: 100%;
+    margin: 0 auto 40px auto;
+    font-size: 16px;
+}
+
+.image-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    width: 200px;
+    border-radius: 3px;
+    transition: transform 0.3s ease;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .campusLife {
+        padding: 50px 20px; /* Further reduce padding */
     }
 
-    svg{
-        width: 16px;
-        height: 16px;
+    .cl-content h2 {
+        font-size: 28px; /* Adjust heading size for mobile */
     }
 
-    .logo{
-        height: auto;
-        width: 125%;
+    .cl-content p {
+        font-size: 14px; /* Slightly smaller font on mobile */
+    }
+
+    .image-grid {
+        flex-direction: column; /* Stack the cards vertically */
+        align-items: center; /* Center align the items */
+    }
+
+    .card {
+        width: 100%; /* Make the cards take up full width */
+        max-width: 300px; /* Add a max-width to avoid excessive scaling */
+    }
+}
+
+@media (max-width: 480px) {
+    .cl-content h2 {
+        font-size: 24px; /* Even smaller heading on very small devices */
+    }
+
+    .cl-content p {
+        font-size: 13px; /* Adjust paragraph size for small screens */
+    }
+
+    .card {
+        width: 90%; /* Slightly reduce card width for better fit */
+        max-width: 280px;
+    }
+}
+
+.mAndV {
+    display: flex;
+    align-items: center;
+    padding: 100px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.separator {
+    width: 2px;
+    background-color: #ccc; /* Line color */
+    height: 150px; /* Adjust height as needed */
+    margin: 0 20px; /* Space around the line */
+}
+
+/* Box for mission and vision content */
+.mission-vision-box {
+    display: flex;
+    flex: 1;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* Each column for Mission and Vision */
+.column {
+    flex: 1;
+    padding: 0 20px;
+}
+
+/* Style for the h3 headings */
+.column h3 {
+    color: #d32f2f;
+    font-size: 40px;
+}
+
+/* Style for the paragraph text */
+.column p {
+    font-size: 20px;
+    line-height: 1.5;
+    color: #333;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .mAndV {
+        flex-direction: column;
+        padding: 50px 20px; /* Further reduce padding */
+    }
+
+    .separator {
+        display: none; /* Remove separator on mobile */
+    }
+
+    .mission-vision-box {
+        flex-direction: column; /* Stack mission and vision boxes vertically */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .column {
+        padding: 20px 0; /* Add padding between stacked columns */
+        text-align: center; /* Center-align text for mobile */
+    }
+
+    .column h3 {
+        font-size: 30px; /* Reduce heading size for mobile */
+    }
+
+    .column p {
+        font-size: 18px; /* Slightly smaller font on mobile */
+    }
+}
+
+/* Media query for very small screens */
+@media (max-width: 480px) {
+    .mAndV {
+        padding: 30px 10px; /* Minimal padding for very small devices */
+    }
+
+    .column h3 {
+        font-size: 24px; /* Further reduce heading size */
+    }
+
+    .column p {
+        font-size: 16px; /* Adjust paragraph font size for readability */
     }
 }
 
 
+.programs{
+    background-color: #7b1d1d;
+    color: white;
+    padding: 100px 20px;
+}
+
+.programs-intro h2{
+    font-size: 40px;
+    text-align: center;
+}
+
+.programs-intro p{
+    font-size: 20px;
+    text-align: center; 
+}
+.progs-offered{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 20px; /* Ensure the columns stay in one row */
+}
+.column-p{
+    margin:10px;
+    padding: auto;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.column-p h3{
+    border-bottom: 2px solid white;
+    padding-bottom: 10px;
+    font-size: 24px;
+}
+
+.column-p ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .programs {
+        padding: 50px 20px; /* Reduce padding */
+    }
+
+    .programs-intro h2 {
+        font-size: 32px; /* Smaller heading size */
+    }
+
+    .programs-intro p {
+        font-size: 18px; /* Adjust font size for readability */
+    }
+
+    .progs-offered {
+        flex-direction: column; /* Stack the columns vertically */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .column-p {
+        padding: 20px 0; /* Add padding between stacked columns */
+        text-align: center; /* Center the text on smaller screens */
+    }
+
+    .column-p h3 {
+        font-size: 22px; /* Reduce heading size */
+    }
+
+    .column-p p, .column-p ul {
+        font-size: 18px; /* Adjust font size */
+    }
+}
+
+/* Media query for very small screens (e.g., mobile) */
+@media (max-width: 480px) {
+    .programs {
+        padding: 30px 10px; /* Reduce padding further for small devices */
+    }
+
+    .programs-intro h2 {
+        font-size: 28px; /* Even smaller heading for very small screens */
+    }
+
+    .programs-intro p {
+        font-size: 16px;
+    }
+
+    .column-p {
+        margin: 0 0 20px 0; /* Add space between stacked items */
+    }
+
+    .column-p h3 {
+        font-size: 20px;
+    }
+
+    .column-p p, .column-p ul {
+        font-size: 16px; /* Smaller font size for better fit */
+    }
+}
+
+.content {
+    position: relative; 
+    z-index: 2; 
+    color: rgb(141, 20, 20); 
+    padding: 20px;
+    margin-top: 60px;
+}
 
