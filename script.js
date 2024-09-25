@@ -9,6 +9,46 @@ document.addEventListener("DOMContentLoaded", () => {
     const nextButton = document.getElementById("nextVideo");
     let currentIndex = 0;
 
+    const loginModal = document.getElementById("loginModal");
+    const openLoginButton = document.getElementById("openLoginButton");
+    const closeLoginButton = document.getElementById("closeLoginButton");
+    const loginForm = document.getElementById("loginForm");
+    const loginMessage = document.getElementById("loginMessage");
+    const userDetails = document.getElementById("userDetails");
+    const userInfo = document.getElementById("userInfo");
+
+    // Show login modal
+    openLoginButton.addEventListener("click", () => {
+        loginModal.style.display = "block";
+    });
+
+    // Close login modal
+    closeLoginButton.addEventListener("click", () => {
+        loginModal.style.display = "none";
+        loginMessage.innerHTML = ''; // Clear message
+        loginForm.reset(); // Reset form
+    });
+
+    // Handle login form submission
+    loginForm.addEventListener("submit", (event) => {
+        event.preventDefault(); // Prevent page refresh
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        // Simulate a login check (you'd typically check against a database)
+        if (username === "admin" && password === "password") { // Example credentials
+            loginMessage.innerHTML = "<p>Login Successful!</p>";
+            loginModal.style.display = "none";
+            userDetails.style.display = "block";
+            userInfo.innerHTML = `Welcome, ${username}! Here are your details: [User details here]`;
+        } else {
+            loginMessage.innerHTML = "<p>Invalid username or password. Please try again.</p>";
+        }
+    });
+
+
+
+
     // Show modal on register button click
     registerButton.addEventListener("click", () => {
         modal.style.display = "block";
