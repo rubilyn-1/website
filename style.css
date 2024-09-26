@@ -383,21 +383,19 @@ html {
     display: flex;
     flex-direction: row;
     width: 100%;
-    justify-content: center;
+    justify-content: space-between; 
     align-items: center;
-    text-align: left;
-    padding: 50px 20px;
+    padding: 50px 0px;
     gap: 30px;
     max-width: 1200px;
-    margin:0 auto;
+    margin: 0 auto;
 }
 
 
 .about-content{
-    flex: 2;
-    padding-right: 20px;
+    flex: 1;
+    text-align: left; 
     line-height: 1.6;
-    max-width: 1200px;
 }
 
 
@@ -405,28 +403,30 @@ html {
     font-size: 36px;
     color: #d32f2f;
     margin-bottom: 40px;
+    text-align: center; /* Center the title */
 }
 
 
 .about-content p {
     font-size: 20px;
     color: #333;
+    text-align: justify;
 }
 
 
 .about-image {
-    flex: 1;
+    flex: 1.5;
+    height: 100%; /* Make the image cover the height of its container */
+    width: 100%;
     overflow: hidden;
-    max-width: 100%;
     position: relative;
 }
 
 
 .about-image img{
-    width:100%;
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
     border-radius: 5px;
 }
 
@@ -441,6 +441,9 @@ html {
     .about-content {
         padding-right: 0;
     }
+    .about-image{
+        flex: 1;
+    }
 
 
     .about-image img {
@@ -454,7 +457,8 @@ html {
     background-color: #d32f2f;
     color: white;
     padding: 100px 20px;
-    text-align: center;
+    text-align: justify;
+
 }
 
 
@@ -469,23 +473,40 @@ html {
     margin: 0 auto 40px auto;
     font-size: 16px;
 }
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
 
+/* Slider (Horizontal scroll of cards) */
+.slider {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 20px;
+}
 
 .image-grid {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px;
     margin-bottom: 40px;
 }
 
 
 .card {
+    min-width: 400px;
+    max-width: 400px;
+    height: 300px;
     position: relative;
     overflow: hidden;
-    width: 200px;
-    border-radius: 3px;
-    transition: transform 0.3s ease;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -493,7 +514,45 @@ html {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 3px;
+}
+
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .card-overlay {
+    opacity: 1;
+}
+
+/* Slider Navigation Buttons */
+.slider-prev, .slider-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+    border-radius: 80px;
+}
+
+.slider-prev {
+    left: 10px;
+}
+
+.slider-next {
+    right: 10px;
 }
 
 
@@ -570,6 +629,7 @@ html {
     flex: 1;
     justify-content: space-evenly;
     align-items: center;
+    text-align: justify;
 }
 
 
@@ -667,13 +727,14 @@ html {
 
 .programs-intro p{
     font-size: 20px;
-    text-align: center;
+    text-align: justify;
 }
 .progs-offered{
     display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
     gap: 20px; /* Ensure the columns stay in one row */
+    text-align: justify;
 }
 .column-p{
     margin:10px;
@@ -695,6 +756,45 @@ html {
     padding: 0;
 }
 
+.contact {
+    padding: 20px;
+    background-image: url(images/outside5.jpeg);
+    background-size: cover; 
+    background-position: center; 
+    position: relative; 
+    color: white; 
+}
+
+.contact-container {
+    display: flex; 
+    justify-content: space-between; 
+    padding: 100px;
+}
+
+.contact-column {
+    flex: 1; 
+    margin: 10px; 
+    min-width: 200px; 
+    background: rgba(0, 0, 0, 0.6); 
+    padding: 15px; 
+    border-radius: 8px; 
+}
+
+.social-media {
+    position: absolute; 
+    bottom: 10px; 
+    right: 10px;
+}
+
+.social-media img {
+    width: 30px; 
+    margin-left: 10px; 
+    transition: transform 0.3s; 
+}
+
+.social-media img:hover {
+    transform: scale(1.1); 
+}
 
 /* Media query for smaller screens */
 @media (max-width: 768px) {
@@ -767,6 +867,7 @@ html {
     .column-p p, .column-p ul {
         font-size: 16px; /* Smaller font size for better fit */
     }
+
 }
 
 

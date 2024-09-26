@@ -7,6 +7,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const videos = document.querySelectorAll(".slider-video");
     const texts = document.querySelectorAll(".slider-text");
     const nextButton = document.getElementById("nextVideo");
+    const slider = document.querySelector('.slider');
+    const nextButton2 = document.querySelector('.slider-next');
+    const prevButton = document.querySelector('.slider-prev');
+    const imageCards = document.querySelectorAll('.image-grid .card');
+    const cards = document.querySelectorAll('.card'); 
+    const totalCards = cards.length; 
+
     let currentIndex = 0;
 
     const loginModal = document.getElementById("loginModal");
@@ -127,7 +134,17 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initially play the first video
     switchVideo(currentIndex);
 
-
+    nextButton2.addEventListener('click', () => {
+        imageCards[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % imageCards.length;
+        imageCards[currentIndex].classList.add('active');
+    });
+    
+    prevButton.addEventListener('click', () => {
+        imageCards[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex - 1 + imageCards.length) % imageCards.length;
+        imageCards[currentIndex].classList.add('active');
+    });
 
     
 });
