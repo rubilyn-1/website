@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const imageCards = document.querySelectorAll('.image-grid .card');
     const cards = document.querySelectorAll('.card'); 
     const totalCards = cards.length; 
-
     let currentIndex = 0;
 
     const loginModal = document.getElementById("loginModal");
@@ -53,9 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-
-
-
     // Show modal on register button click
     registerButton.addEventListener("click", () => {
         modal.style.display = "block";
@@ -94,8 +90,8 @@ document.addEventListener("DOMContentLoaded", () => {
     videos[currentIndex].classList.add("active");
     texts[1].classList.add("active-text");
 
-     // Function to switch video and text
-     const switchVideo = (index) => {
+    // Function to switch video and text
+    const switchVideo = (index) => {
         videos.forEach((video, i) => {
             if (i === index) {
                 video.classList.add("active");
@@ -121,8 +117,6 @@ document.addEventListener("DOMContentLoaded", () => {
             switchVideo(currentIndex);
         });
     });
-    
-
 
     // Manually switch video using the button
     nextButton.addEventListener("click", () => {
@@ -146,5 +140,26 @@ document.addEventListener("DOMContentLoaded", () => {
         imageCards[currentIndex].classList.add('active');
     });
 
-    
+// Create the intersection observer for fade-in effect
+const sections = document.querySelectorAll(".section");
+
+// Create the intersection observer
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        // Add the fade-in class if scrolling into the section
+        if (entry.isIntersecting) {
+            entry.target.classList.add("fade-in");
+        } else {
+            // Remove the fade-in class when scrolling out
+            entry.target.classList.remove("fade-in");
+        }
+    });
+}, {
+    threshold: 0.2, // 20% of the section must be visible for the fade-in effect to trigger
+});
+
+// Observe each section
+sections.forEach(section => {
+    observer.observe(section);
+});
 });

@@ -464,7 +464,8 @@ html {
 
 .cl-content h2{
     font-size: 32px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
 
@@ -722,27 +723,38 @@ html {
 .programs-intro h2{
     font-size: 40px;
     text-align: center;
+    margin-bottom: 30px;
 }
 
 
 .programs-intro p{
     font-size: 20px;
     text-align: justify;
+    margin-bottom: 40px;
 }
 .progs-offered{
     display: flex;
     justify-content: space-between;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px; /* Ensure the columns stay in one row */
-    text-align: justify;
+    text-align: center;
 }
 .column-p{
     margin:10px;
     padding: auto;
     font-size: 20px;
     line-height: 1.5;
+    text-align: center;
 }
-
+.bottom-row {
+    display: flex;
+    justify-content: center;  
+    width: 100%;
+    gap: 150px;
+}
 
 .column-p h3{
     border-bottom: 2px solid white;
@@ -757,18 +769,32 @@ html {
 }
 
 .contact {
+    position: relative; 
     padding: 20px;
-    background-image: url(images/outside5.jpeg);
+    color: white;
+    overflow: hidden; 
+}
+.contact::before {
+    content: ""; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    background-image: url('images/outside5.jpeg'); 
     background-size: cover; 
     background-position: center; 
-    position: relative; 
-    color: white; 
+    opacity: 0.6;
+    filter: brightness(0.5); 
+    z-index: 1;
 }
 
 .contact-container {
     display: flex; 
+    position: relative;
     justify-content: space-between; 
     padding: 100px;
+    z-index: 2;
 }
 
 .contact-column {
@@ -784,11 +810,12 @@ html {
     position: absolute; 
     bottom: 10px; 
     right: 10px;
+    z-index: 2;
 }
 
 .social-media img {
-    width: 30px; 
-    margin-left: 10px; 
+    width: 50px; 
+    margin-left: 30px; 
     transition: transform 0.3s; 
 }
 
@@ -870,5 +897,15 @@ html {
 
 }
 
+/* Hide sections initially */
+.section {
+    opacity: 0;
+    transform: translateY(50px); /* Move down slightly */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
 
-
+/* Class to trigger fade-in */
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
