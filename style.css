@@ -175,7 +175,7 @@ nav li:first-child{
     text-align: center;
     align-items: center;
     top: 0;
-    z-index: 999;
+    z-index: 990;
 }
 .logo-container:hover{
     background-color: #800b0b00;
@@ -951,4 +951,8 @@ html {
 .fade-in {
     opacity: 1;
     transform: translateY(0);
+}
+
+svg{
+    z-index: 999;
 }
